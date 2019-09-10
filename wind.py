@@ -24,10 +24,10 @@ c = len(el)
 for i in range(0,c):
     el = driver.find_elements_by_xpath("//a/i[@class='fa fa-external-link']")
     OW = driver.current_window_handle
-    el[i].click()
     EW = driver.window_handles
-    sleep(3)
-#    wait = WebDriverWait(driver,10).until(EC.new_window_is_opened(EW[-1]))
+    el[i].click()
+    wait = WebDriverWait(driver,10).until(EC.new_window_is_opened(EW))
+    EW = driver.window_handles
     driver.switch_to_window(EW[-1])
     driver.close()
     driver.switch_to_window(OW)
