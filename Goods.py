@@ -34,25 +34,25 @@ for k in range(0,i-1):
             box.find_element_by_xpath("//input[@name='quantity']").send_keys("13")
             box.find_element_by_xpath("//input[@name='new_images[]']").send_keys(os.path.dirname(os.path.abspath(__file__))+"/img/12200.png")
             date_picker = box.find_element_by_xpath("//input[@name='date_valid_from']")
-            date_picker.send_keys("10092019") #Попытка ввода даты
- #           for g in range(0,2):
- #               date_picker.click()
- #               actions = ActionChains(driver)
- #               actions.click(date_picker)
- #               time.sleep(1)
- #               actions.send_keys(Keys.LEFT)
- #               actions.send_keys(Keys.LEFT)
- #               actions.perform()
- #               actions = ActionChains(driver)
- #               actions.send_keys("07")
- #               actions.perform()
- #               actions = ActionChains(driver)
- #               actions.send_keys("09")
- #               actions.perform()
- #               actions = ActionChains(driver)
- #               actions.send_keys("2019")
- #               actions.perform()
- #               date_picker = box.find_element_by_xpath("//input[@name='date_valid_to']")
+ #           date_picker.send_keys("10092019") #Попытка ввода даты
+            for g in range(0,2):
+                date_picker.click()
+                actions = ActionChains(driver)
+                actions.click(date_picker)
+                time.sleep(1)
+                actions.send_keys(Keys.LEFT)
+                actions.send_keys(Keys.LEFT)
+                actions.perform()
+                actions = ActionChains(driver)
+                actions.send_keys("07")
+                actions.perform()
+                actions = ActionChains(driver)
+                actions.send_keys("09")
+                actions.perform()
+                actions = ActionChains(driver)
+                actions.send_keys("2019")
+                actions.perform()
+                date_picker = box.find_element_by_xpath("//input[@name='date_valid_to']")
             box.click() #Сброс выпадающего календаря???
             driver.find_element_by_xpath("//li/a[@href='#tab-information']").click() #Information
             time.sleep(1)
@@ -73,5 +73,6 @@ for k in range(0,i-1):
             driver.find_element_by_xpath("//button[@name='save']").click()
             break
         k = k + 1
+driver.find_elements_by_partial_link_text("Duffy")
 time.sleep(1)
 driver.quit()
