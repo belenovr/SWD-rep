@@ -20,10 +20,10 @@ for i in range(1,c-1):
     for j in range(1,k-1):
         qcols = qrow[j].find_elements_by_xpath("./td")
         col = qcols[2].find_element_by_xpath("./select/option[@selected='selected']")
-        val = col.get_attribute("textContent")
-        l = val[0]
-        if l >= ch:
-            ch = l
+        val = col.text
+#        l = val[0]
+        if val >= ch:
+            ch = val
         else:
             break
     driver.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones")
