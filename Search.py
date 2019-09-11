@@ -23,7 +23,8 @@ for i in range(1,c-1): #Перебор стран
     if s > l:
         l = s
     else:
-        break
+        passed = False
+        assert passed, 'Not passed'
     if z != '0':
         zones.append(i)
 l = '0'
@@ -44,7 +45,8 @@ for i in zones: #Перебор зон
         if s>l:
            l = s
         else:
-            break
+            passed = False
+            assert passed, 'Not passed'
 
 time.sleep(1)
 driver.quit()

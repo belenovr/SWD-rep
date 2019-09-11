@@ -25,7 +25,8 @@ for i in range(1,c-1):
         if val >= ch:
             ch = val
         else:
-            break
+            passed = False
+            assert passed, 'Not passed'
     driver.get("http://localhost/litecart/admin/?app=geo_zones&doc=geo_zones")
     tabl = driver.find_element_by_xpath("//form/table[@class='dataTable']")
     trow = tabl.find_elements_by_xpath("./tbody/tr")
