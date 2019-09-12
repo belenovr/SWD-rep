@@ -13,7 +13,6 @@ for i in range(0, len(list)-1) :
     block = driver.find_element_by_id('box-apps-menu-wrapper')  # Определение блока меню
     list = block.find_elements_by_xpath("./ul/li[@id='app-']")  # Определение пунктов меню
     list[i].click()
-    time.sleep(1)
     driver.find_elements_by_tag_name("h1")
     block = driver.find_element_by_id('box-apps-menu-wrapper')  # Определение блока меню
     list = block.find_elements_by_xpath("./ul/li[@id='app-']")  # Определение пунктов меню
@@ -30,10 +29,7 @@ for i in range(0, len(list)-1) :
             list = block.find_elements_by_xpath("./ul/li[@id='app-']")  # Определение пунктов меню
             sublist = list[i].find_elements_by_xpath('./ul/li/a') #Определение подпунктов меню
             sublist[j].click()
-            time.sleep(1)
             driver.find_elements_by_tag_name("h1")
-
-time.sleep(1)
 driver.quit()
 
 
